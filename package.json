@@ -1,0 +1,27 @@
+{
+  "name": "sdk",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode=production --env.NODE_ENV=local",
+    "lint": "npx eslint . --ext .ts",
+    "start": "webpack-dev-server --mode=production --env.NODE_ENV=local --watch --port=8111"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^3.10.1",
+    "@typescript-eslint/parser": "^3.10.1",
+    "clean-webpack-plugin": "^3.0.0",
+    "dotenv-webpack": "^2.0.0",
+    "eslint": "^7.7.0",
+    "ts-loader": "^8.0.3",
+    "typescript": "^4.0.2",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  }
+}

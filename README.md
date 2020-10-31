@@ -1,4 +1,4 @@
-# SDK-JS
+# Custody SDK
 
 ## Installation
 1. Start server

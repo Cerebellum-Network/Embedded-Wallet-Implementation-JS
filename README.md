@@ -1,7 +1,9 @@
-# Custody SDK
+# Embedded Wallet Implementation JS
 
-## Installation
-1. Start server
+This is Javascript implementation of the Embedded Wallet
+
+## Quick start
+1. Start development server locally:
 ```
 nvm exec npm start
 ```
@@ -9,7 +11,7 @@ nvm exec npm start
 ```html
 <script src="http://localhost:8111/cereSDK.js"></script>
 ```
-2. Now you can access `cereSDK` object
+3. Now you can access `cereSDK` object
 
 ## API
 ### **init(): Promise\<void>**
@@ -20,5 +22,4 @@ nvm exec npm start
 #### *Example:*
 ```
 await cereSDK.init(242, 'sdfsdfsdf3243rfsd');
-await cereSDK.init(242, 'sdfsdfsdf3243rfsd', 'access_token_from_the_backend');
 ```

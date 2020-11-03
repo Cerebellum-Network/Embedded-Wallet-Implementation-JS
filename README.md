@@ -13,11 +13,6 @@ nvm exec npm start
 ```
 3. Now you can access `cereSDK` object
 
-## How to build SDK
-```bash
-nvm exec npm run build
-```
-
 ## API
 ### **init(): Promise\<void>**
 #### *Parameters:*
@@ -27,4 +22,13 @@ nvm exec npm run build
 #### *Example:*
 ```
 await cereSDK.init(242, 'sdfsdfsdf3243rfsd');
+```
+## How to build SDK
+```bash
+nvm exec npm run build
+```
+
+## How to deploy
+```bash
+aws s3 sync build/ s3://some-bucket-on-s3 
 ```

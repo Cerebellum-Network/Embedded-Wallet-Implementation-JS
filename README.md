@@ -13,6 +13,11 @@ nvm exec npm start
 ```
 3. Now you can access `cereSDK` object
 
+## How to build SDK
+```bash
+nvm exec npm run build
+```
+
 ## API
 ### **init(): Promise\<void>**
 #### *Parameters:*

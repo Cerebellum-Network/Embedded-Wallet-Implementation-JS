@@ -4,8 +4,10 @@ const path = require('path');
 const Dotenv = require('dotenv-webpack');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 
+const PACKAGE = require('./package.json');
+const sdkVersion = PACKAGE.version;
+
 module.exports = env => {
-  const sdkVersion = process.env.npm_package_version;
   const dotenvPath = path.resolve(__dirname, `.env.${env.NODE_ENV}`);
 
   let sdkBundleName = 'cereSDK.js';

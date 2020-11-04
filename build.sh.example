@@ -1,0 +1,6 @@
+#!/bin/sh -e
+
+./node_modules/.bin/webpack --mode=production --env.NODE_ENV=prod
+
+aws s3 sync dist/ s3://***********
+aws cloudfront create-invalidation --distribution-id ********* --paths "/*"

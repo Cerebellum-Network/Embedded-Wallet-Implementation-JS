@@ -29,6 +29,17 @@ nvm exec npm run build
 ```
 
 ## How to deploy
+1.Create prod version for .env file:
 ```bash
-aws s3 sync build/ s3://some-bucket-on-s3 
+cp .env.local .env.prod
+```
+2. Change parameters for prod
+3. Copy build script for `build.sh.example`:
+```bash
+cp build.sh.example build.sh
+```
+4. Modify it and specify your S3 bucket and distribution ID
+5. Run and deploy:
+```bash
+./build.sh
 ```

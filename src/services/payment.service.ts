@@ -1,19 +1,19 @@
 import configService from './config.service';
 import {PaymentServiceInterface} from "./payment.service.interface";
 
-interface GetAccessTokenResponse {
+interface PaymentResponse {
   data: {
     txHash: string;
   };
 }
 
 class PaymentService implements PaymentServiceInterface {
-  public async sendPayment(destinationAccount: string, asset: string, amount: string): Promise<string> {
-    const url = `${configService.blockchainGatewayUrl}/payment`;
+  public async rewardUser(destinationAccount: string, asset: string, amount: string): Promise<string> {
+    const url = `${configService.blockchainGatewayUrl}/substrate/rewardUser`;
     const req: RequestInit = {
       method: 'POST',
       body: JSON.stringify({
-          destinationAccount,
+          userPublicKey: destinationAccount,
           asset,
           amount,
         }
@@ -23,7 +23,7 @@ class PaymentService implements PaymentServiceInterface {
       },
     };
 
-    const response: GetAccessTokenResponse = await (await fetch(url, req)).json();
+    const response: PaymentResponse = await (await fetch(url, req)).json();
 
     return response.data.txHash;
   }

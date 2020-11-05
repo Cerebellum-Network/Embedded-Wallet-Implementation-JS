@@ -1,7 +1,10 @@
 import paymentService from '../services/payment.service';
+import configService from "../services/config.service";
 
-const payment = async (destinationAccount: string, asset: string, amount: string) => {
-  return paymentService.sendPayment(destinationAccount, asset, amount);
+const rewardUser = async (destinationAccount: string, asset: string, amount: string) => {
+  await configService.getServicesUrls();
+
+  return paymentService.rewardUser(destinationAccount, asset, amount);
 };
 
-export default payment;
+export {rewardUser};

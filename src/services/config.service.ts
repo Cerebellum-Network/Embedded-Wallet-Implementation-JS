@@ -1,8 +1,10 @@
-class ConfigService {
+import {ConfigServiceInterface} from "./config.service.interface";
+
+class ConfigService implements ConfigServiceInterface {
   private _identityServiceUrl: string;
   private _blockchainGatewayUrl: string;
 
-  public async getServicesUrls(appId: string): Promise<void> {
+  public async getServicesUrls(): Promise<void> {
     try {
       this._identityServiceUrl = process.env.IDENTITY_SERVICE_URL;
       this._blockchainGatewayUrl = process.env.BLOCKCHAIN_API_GATEWAY;
@@ -16,7 +18,7 @@ class ConfigService {
   }
 
   public get blockchainGatewayUrl() {
-    return this._identityServiceUrl;
+    return this._blockchainGatewayUrl;
   }
 }
 

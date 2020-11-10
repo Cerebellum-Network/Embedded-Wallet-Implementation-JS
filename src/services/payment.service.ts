@@ -2,9 +2,10 @@ import configService from './config.service';
 import {PaymentServiceInterface} from "./payment.service.interface";
 
 interface PaymentResponse {
+  code: string;
   data: {
     txHash: string;
-  };
+  }
 }
 
 class PaymentService implements PaymentServiceInterface {

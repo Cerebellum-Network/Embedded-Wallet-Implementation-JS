@@ -23,7 +23,7 @@ const init = async (
     return;
   }
 
-  await configService.getServicesUrls(appId.toString());
+  await configService.getServicesUrls();
 
   contextService.appId = appId;
   contextService.integrationPartnerUserId = integrationPartnerUserId;

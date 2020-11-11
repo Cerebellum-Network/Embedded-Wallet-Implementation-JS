@@ -61,4 +61,6 @@ dist/
 .vscode/
 
 .env.prod
+.env.dev
+.env.stage
 build.sh

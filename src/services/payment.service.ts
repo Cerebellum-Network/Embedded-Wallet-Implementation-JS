@@ -1,4 +1,5 @@
 import configService from './config.service';
+import contextService from './context.service';
 import {PaymentServiceInterface} from "./payment.service.interface";
 
 interface PaymentResponse {
@@ -17,6 +18,7 @@ class PaymentService implements PaymentServiceInterface {
           userPublicKey: destinationAccount,
           asset,
           amount,
+          network: contextService.network,
         }
       ),
       headers: {

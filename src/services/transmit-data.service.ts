@@ -1,5 +1,6 @@
 import configService from './config.service';
 import {TransmitDataServiceInterface} from "./transmit-data.service.interface";
+import contextService from "./context.service";
 
 interface TransmitDataResponse {
   code: string;
@@ -23,6 +24,7 @@ class TransmitDataService implements TransmitDataServiceInterface {
           signatureValues,
           signature,
           reference,
+          network: contextService.network,
         }
       ),
       headers: {

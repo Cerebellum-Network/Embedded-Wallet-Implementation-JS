@@ -1,6 +1,9 @@
+const DEFAULT_NETWORK = 'cere-testnet';
+
 class ContextService {
   private _appId: string;
   private _integrationPartnerUserId: string;
+  private _network: string = DEFAULT_NETWORK;
 
   public get appId(): string {
     return this._appId;
@@ -16,6 +19,14 @@ class ContextService {
 
   public set integrationPartnerUserId(id: string) {
     this._integrationPartnerUserId = id;
+  }
+
+  public get network() {
+    return this._network;
+  }
+
+  public set network(network: string) {
+    this._network = network;
   }
 }
 
